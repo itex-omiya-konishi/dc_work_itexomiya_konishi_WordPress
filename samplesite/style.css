@@ -387,9 +387,9 @@ header h1 a:hover {
     background:none;
 }
 
-.top-navDetail {
+/*.top-navDetail {
 
-}
+}*/
 .top-navDetail a {
     font-size: 18px;
     background: #1a445d;
@@ -424,8 +424,8 @@ header h1 a:hover {
 }
 
 
-.sub-menu {
-}
+/*.sub-menu {
+}*/
 
 .sub-menu h3 {
     border:none;
