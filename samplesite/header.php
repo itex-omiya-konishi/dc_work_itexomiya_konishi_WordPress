@@ -47,17 +47,15 @@
             </h1>
             <div id="menu">
                 <ul>
-                    <li class="home">
-                        <!-- ★ 修正済み：/index → / -->
-                        <a href="<?php echo home_url(); ?>/">TOP</a>
-                    </li>
+                    <li class="home"><a href="<?php echo home_url(); ?>/">TOP</a></li>
                     <?php wp_nav_menu(array(
                         'theme_location' => 'place_global',
                         'container' => '',
                         'menu_class' => '',
-                        'items_wrap' => '%3$s',
+                        'items_wrap' => '%3$s', //<ul>を出力しない
                     )); ?>
                 </ul>
             </div>
+        </div>
         </div>
     </header>
