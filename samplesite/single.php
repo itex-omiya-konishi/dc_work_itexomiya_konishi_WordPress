@@ -1,17 +1,21 @@
-<div id="cont_first" class="container">
-    <div id="contents">
-        <div id="cont_left">
-            <p>2020/08/01</p>
-            <h2>夏季休暇のお知らせ</h2>
-            <p>8月13日（木）〜14日（金）で夏季休暇をいただきます。</p>
-        </div>
+	<?php get_header(); ?>
+	<div id="cont_first" class="container">
+	    <div id="contents">
+	        <?php get_sidebar(); ?>
+	        <div id="cont_left">
+	            <?php if (have_posts()): while (have_posts()): the_post(); ?>
+	                    <?php the_time('Y/m/d'); ?>
+	                    <h2><?php the_title(); ?></h2>
+	                    <?php the_content(); ?>
+	            <?php endwhile;
+                endif; ?>
 
-    </div>
-</div>
+	        </div>
 
-<div id="pageTop">
-    <a href="#">PAGE TOP</a>
-</div>
-</body>
+	    </div>
+	</div>
 
-</html>
+	<div id="pageTop">
+	    <a href="#">PAGE TOP</a>
+	</div>
+	<?php get_footer(); ?>

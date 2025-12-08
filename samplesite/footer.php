@@ -9,3 +9,8 @@
             <div class="copyright">Copyright &copy; 2020 SAMPLE SITE All Rights Reserved.</div>
         </div>
     </footer>
+
+    <?php wp_footer(); ?>
+    </body>
+
+    </html>
