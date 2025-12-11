@@ -1,6 +1,6 @@
 # BEGIN WordPress
 RewriteEngine On
-RewriteBase /omiya/0007/wp/
+RewriteBase /omiya/0007/
 RewriteRule ^index\.php$ - [L]
 
 # 既存のファイルやディレクトリがある場合はスルー
@@ -8,5 +8,5 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
 # すべて index.php に渡す
-RewriteRule . /omiya/0007/wp/index.php [L]
+RewriteRule . /omiya/0007/index.php [L]
 # END WordPress
