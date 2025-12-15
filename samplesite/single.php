@@ -1,4 +1,5 @@
 	<?php get_header(); ?>
+
 	<div id="cont_first" class="container">
 	    <div id="contents">
 	        <?php get_sidebar(); ?>
@@ -9,9 +10,7 @@
 	                    <?php the_content(); ?>
 	            <?php endwhile;
                 endif; ?>
-
 	        </div>
-
 	    </div>
 	</div>
 

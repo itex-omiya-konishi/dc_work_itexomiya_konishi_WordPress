@@ -2,7 +2,9 @@
 // テーマの機能を登録
 function mytheme_setup()
 {
-
+    // サムネイル画像
+    add_theme_support('post-thumbnails');
+    add_image_size('thumbside', 85, 85, true);
     // カスタムメニューの登録
     register_nav_menus(
         array(
