@@ -1,31 +1,40 @@
 <?php get_header(); ?>
 
 <div id="cont_first" class="container">
+
+    <?php get_sidebar(); ?>
+
+    <div class="">
+        <?php if (function_exists('bcn_display')) {
+            bcn_display();
+        } ?>
+    </div>
+    <p></p>
+
     <div id="contents">
-
-        <?php get_sidebar(); ?>
-
         <div id="cont_left">
-
             <!-- Blog（こちらは静的のまま？ そのまま残します） -->
             <div class="information">
                 <h2>Blog</h2>
                 <dl>
-                    <dt>2020-08-04</dt>
-                    <dd>
-                        <div class="b_img"><img src="images/sample.jpg"></div>
-                        <div class="b_right"><a href="sample.html">社長通信</a></div>
-                    </dd>
-                    <dt>2020-08-02</dt>
-                    <dd>
-                        <div class="b_img"><img src="images/sample.jpg"></div>
-                        <div class="b_right"><a href="sample.html">社員紹介</a></div>
-                    </dd>
-                    <dt>2020-08-01</dt>
-                    <dd>
-                        <div class="b_img"><img src="images/sample.jpg"></div>
-                        <div class="b_right"><a href="sample.html">セミナー開催報告</a></div>
-                    </dd>
+                    <?php
+                    $blogPosts = get_posts('numberposts=4&category=3');
+                    foreach ($blogPosts as $post):
+                        setup_postdata($post);
+                    ?>
+                        <dt><?php the_time('Y-m-d'); ?></dt>
+                        <dd>
+                            <div class="b_img">
+                                <?php the_post_thumbnail('thumbside'); ?>
+                            </div>
+                            <div class="b_right">
+                                <a href="<?php the_permalink(); ?>">
+                                    <?php the_title(); ?>
+                                </a>
+                            </div>
+                        </dd>
+                    <?php endforeach;
+                    wp_reset_postdata(); ?>
                 </dl>
             </div>
 
@@ -51,8 +60,10 @@
                     <?php endwhile;
                     endif; ?>
                 </dl>
+                <?php if (function_exists('wp_pagenavi')) : ?>
+                    <?php wp_pagenavi(); ?>
+                <?php endif; ?>
             </div>
-
         </div><!-- #cont_left -->
     </div><!-- #contents -->
 </div><!-- #cont_first -->

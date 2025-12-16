@@ -1,7 +1,17 @@
 <?php get_header(); ?>
+
 <div id="cont_first" class="container">
+
+    <?php get_sidebar(); ?>
+
+    <div class="">
+        <?php if (function_exists('bcn_display')) {
+            bcn_display();
+        } ?>
+    </div>
+    <p></p>
+
     <div id="contents">
-        <?php get_sidebar(); ?>
         <div id="cont_left">
             <?php if (have_posts()): while (have_posts()): the_post(); ?>
                     <h2><?php the_title(); ?></h2>
