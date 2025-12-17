@@ -1,96 +1,62 @@
-<?php
-/* Template Name: 会社概要 */
-?>
-<!DOCTYPE html>
-<html lang="ja">
+ <?php
+    /* Template Name: 会社概要 */
+    ?>
+ <?php get_header(); ?>
 
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css" type="text/css" />
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/common.js"></script>
-    <title>SAMPLE SITE</title>
-</head>
+ <div id="cont_first" class="container">
 
-<body>
-    <header>
-        <div class="container">
-            <h1><a href="index.html"><img src="images/logo.png" alt="SAMPLE WEB SITE" /></a></h1>
-            <div id="menu">
-                <ul>
-                    <li class="home"><a href="index.html">TOP</a></li>
-                    <li><a href="company.html">会社概要</a></li>
-                    <li><a href="service.html">サービス概要</a></li>
-                    <li><a href="archive-news.html">プレスリリース</a></li>
-                    <li><a href="archive-news.html">ブログ</a></li>
-                    <li><a href="contact.html">お問い合わせ</a></li>
-                </ul>
-            </div>
-        </div>
-    </header>
-    <div id="cont_first" class="container">
-        <div id="contents">
-            <div id="cont_left">
-                <h2>会社概要</h2>
-                <table>
-                    <tr>
-                        <th>会社名</th>
-                        <td>Sample site</td>
-                    </tr>
-                    <tr>
-                        <th>本社</th>
-                        <td>〒000-0000<br>
-                            東京都架空区1-2-3-4-5
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>設立</th>
-                        <td>2015年1月1日</td>
-                    </tr>
-                    <tr>
-                        <th>資本金</th>
-                        <td>2000万円 （2020年3月31日現在）</td>
-                    </tr>
-                    <tr>
-                        <th>従業員数</th>
-                        <td><?php the_field('add_member'); ?></td>
-                    </tr>
-                    <tr>
-                        <th>電話番号</th>
-                        <td><?php the_field('add_tel'); ?></td>
-                    </tr>
-                    <tr>
-                        <th>代表者</th>
-                        <td>サンプル太郎</td>
-                    </tr>
-                </table>
-            </div>
-            <div id="cont_right">
-                <div class="sub-menu">
-                    <h3>SERVICE</h3>
-                    <h4>Web事業</h4>
-                    <ul>
-                        <li><a href="service.html#s1">ホームページ制作</a></li>
-                        <li><a href="service.html#s2">エンジニア派遣</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <footer>
-        <ul>
-            <li class="home"><a href="index.html"></a></li>
-            <li><a href="service.html">SERVICE</a></li>
-            <li><a href="company.html">COMPANY</a></li>
-            <li><a href="contact.html">CONTACT</a></li>
-        </ul>
-        <div id="footer">
-            <div class="copyright">Copyright &copy; 2020 SAMPLE SITE All Rights Reserved.</div>
-        </div>
-    </footer>
-    <div id="pageTop">
-        <a href="#">PAGE TOP</a>
-    </div>
-</body>
+     <?php get_sidebar(); ?>
 
-</html>
+     <div class="">
+         <?php if (function_exists('bcn_display')) {
+                bcn_display();
+            } ?>
+     </div>
+     <p></p>
+
+     <body>
+
+         <div id="contents">
+             <div id="cont_left">
+                 <h2>会社概要</h2>
+                 <table>
+                     <tr>
+                         <th>会社名</th>
+                         <td><?php the_field('add_name'); ?></td>
+                     </tr>
+                     <tr>
+                         <th>本社</th>
+                         <td><?php the_field('add_head'); ?><br>
+                             <?php the_field('add_head2'); ?></td>
+                         </td>
+                     </tr>
+                     <tr>
+                         <th>設立</th>
+                         <td><?php the_field('add_begin'); ?></td>
+                     </tr>
+                     <tr>
+                         <th>資本金</th>
+                         <td><?php the_field('add_money'); ?></td>
+                     </tr>
+                     <tr>
+                         <th>従業員数</th>
+                         <td><?php the_field('add_member'); ?></td>
+                     </tr>
+                     <tr>
+                         <th>電話番号</th>
+                         <td><?php the_field('add_tel'); ?></td>
+                     </tr>
+                     <tr>
+                         <th>代表者</th>
+                         <td><?php the_field('add_owner'); ?></td>
+                     </tr>
+                 </table>
+             </div>
+
+         </div>
+ </div>
+
+ <div id="pageTop">
+     <a href="#">PAGE TOP</a>
+ </div>
+ </body>
